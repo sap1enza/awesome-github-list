@@ -1,0 +1,22 @@
+<%= flash[:error] %>
+
+<%= form_with do |form| %>
+  <ul>
+    <li>
+      <%= form.label :technology, "Technology" %>
+      <%= form.text_field :technology, placeholder: 'ruby' %>
+    </li>
+
+    <li>
+      <%= form.label :category, "Category" %>
+      <%= form.text_field :category, placeholder: 'authentication' %>
+    </li>
+
+      <li>
+      <%= form.label :full_name, "Github Repo" %>
+      <%= form.text_field :full_name, placeholder: 'oauth-xx/oauth2' %>
+    </li>
+
+    <li><%= form.submit "Create" %></li>
+  </ul>
+<% end %>
