@@ -4,13 +4,15 @@ require:
   - rubocop-rspec
 
 AllCops:
+  NewCops: enable
   Exclude:
     - 'db/**/*'
     - 'script/**/*'
     - 'bin/**/*'
+    - 'config/**/*'
 
-Metrics/LineLength:
-  Max: 100
+Layout/LineLength:
+  Max: 140
 
 Metrics/BlockLength:
   Exclude:
