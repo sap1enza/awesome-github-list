@@ -1,0 +1,8 @@
+<h1> Technologies </h1>
+
+<ul>
+  <% @technologies.each do |technology| %>
+    <%= link_to technology, technology_path(technology) %>
+  <% end %>
+</ul>
+

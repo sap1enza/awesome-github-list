@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Back', :back %></li>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

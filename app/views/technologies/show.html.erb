@@ -1,0 +1,8 @@
+<h1><%= @technology %></h1>
+
+<ul>
+  <% @categories.each do |category| %>
+    <li><%= link_to category, category_path(@technology, category) %></li>
+  <% end %>
+</ul>
+

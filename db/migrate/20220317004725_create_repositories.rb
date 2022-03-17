@@ -9,5 +9,9 @@ class CreateRepositories < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+
+    add_index :repositories, [:full_name], unique: true
+    add_index :repositories, [:name], unique: true
+    add_index :repositories, [:technology, :category, :name]
   end
 end

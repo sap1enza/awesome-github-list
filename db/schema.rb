@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 2022_03_17_004725) do
     t.jsonb "external_info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["full_name"], name: "index_repositories_on_full_name", unique: true
+    t.index ["name"], name: "index_repositories_on_name", unique: true
+    t.index ["technology", "category", "name"], name: "index_repositories_on_technology_and_category_and_name"
   end
 
 end

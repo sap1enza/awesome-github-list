@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Repository do
   describe 'validations' do
-    it { should validate_presence_of(:full_name) }
-    it { should validate_uniqueness_of(:full_name).case_insensitive }
+    it { is_expected.to validate_presence_of(:full_name) }
+    it { is_expected.to validate_uniqueness_of(:full_name).case_insensitive }
   end
 
   describe 'serializations' do
-    it { should serialize(:external_info) }
+    it { is_expected.to serialize(:external_info) }
   end
 
   describe 'callbacks' do
     describe '#set_name' do
-      it 'should set name based on full_name' do
+      it 'sets name based on full_name' do
         repository = build(:repository)
         repository.full_name = 'octocat/hello-world'
 
