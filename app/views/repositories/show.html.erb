@@ -1,8 +1,12 @@
-<h1><%= link_to(@technology, technology_path(@technology)) %> >> <%= link_to(@category, category_path(@technology, @category)) %> >> <%= @repository.name %></h1>
+<h1><%= link_to(@technology, technology_path(@technology)) %> >> <%= link_to(@category, category_path(@technology, @category)) %> >> <%= @repository.name || @repository.full_name %></h1>
 
 <ul>
   <li><b>Name:</b> <%= @repository.name %></li>
   <li><b>Full Name:</b> <%= @repository.full_name %></li>
   <li><b>Technology:</b> <%= @repository.technology %></li>
   <li><b>Category:</b> <%= @repository.category %></li>
+  <li><b>Is a Fork:</b> <%= @repository.external_info['fork'] %></li>
+  <li><b>Forks Count:</b> <%= @repository.external_info['forks_count'] %></li>
+  <li><b>Stars:</b> <%= @repository.external_info['stargazers_count'] %></li>
+  <li><b>Watchers:</b> <%= @repository.external_info['watchers_count'] %></li>
 </ul>

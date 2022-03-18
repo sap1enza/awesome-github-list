@@ -7,6 +7,8 @@ class RepositoriesController < ApplicationController
     repository = Repository.new(permitted_params)
 
     if repository.save
+      SyncRepositoryService.execute(repository)
+
       redirect_to repository_path(repository.technology, repository.category, repository.name)
     else
       flash[:error] = repository.errors.full_messages

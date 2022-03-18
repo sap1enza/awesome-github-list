@@ -8,8 +8,6 @@ class Repository < ApplicationRecord
   serialize :external_info, Hash
 
   def set_name
-    return unless full_name
-
-    self.name ||= full_name.split('/')[1]
+    self.name ||= full_name&.split('/')[1] || full_name
   end
 end
